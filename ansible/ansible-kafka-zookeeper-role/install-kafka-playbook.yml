@@ -1,0 +1,17 @@
+- hosts: all
+  become: true
+  vars:
+    scala_version: 2.12.2
+    sbt_version: 0.13.15
+    zookeeper_version: 3.4.9
+    kafka_version: 0.11.0.0
+    kafka_brokers:
+      1: 9092
+      2: 9093
+      3: 9094
+    kafka_log_path: /var/log/kafka/
+
+  tasks:
+    - include: tasks/install-java.yml
+    - include: tasks/install-zookeeper.yml
+    - include: tasks/install-kafka.yml
