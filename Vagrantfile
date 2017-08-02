@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
 
     # network config
     config.vm.network "private_network", ip: "192.168.10.4"
+    config.vm.hostname = "192.168.10.4"
 
     # set the name of your vm here
     config.vm.define "kafka-machine" do |d|
